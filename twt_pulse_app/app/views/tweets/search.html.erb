@@ -1,0 +1,8 @@
+<h1>Tweets#search</h1>
+<%= link_to "back", root_path %>
+<p>
+  <%= form_for :tweet, url: tweets_search_results_path, method: :get do |f| %>
+    <%= f.text_field :uid %>
+    <%= f.submit "Search Tweet" %>
+  <% end %>
+</p>
