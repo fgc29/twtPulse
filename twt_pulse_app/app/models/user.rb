@@ -20,21 +20,6 @@ class User < ActiveRecord::Base
     client.update(tweet)
   end
 
-  # def get_user(uid)
-  #   client = Twitter::REST::Client.new do |config|
-  #     config.consumer_key        = Rails.application.config.twitter_key
-  #     config.consumer_secret     = Rails.application.config.twitter_secret
-  #     config.access_token        = oauth_token
-  #     config.access_token_secret = oauth_secret
-  #   end
-  #
-  #   if uid.to_i.size === uid.size
-  #     client.user(uid.to_i)
-  #   else
-  #     client.user(uid)
-  #   end
-  # end
-
 #   def get_user(uid)
 #     client = Twitter::REST::Client.new do |config|
 #       config.consumer_key        = Rails.application.config.twitter_key
@@ -52,39 +37,27 @@ class User < ActiveRecord::Base
 #   "#{tweet.user.screen_name}: #{tweet.to_hash}"
 # end
 #   end
-  def get_user(uid)
-    client = Twitter::Streaming::Client.new do |config|
-      config.consumer_key        = Rails.application.config.twitter_key
-      config.consumer_secret     = Rails.application.config.twitter_secret
-      config.access_token        = oauth_token
-      config.access_token_secret = oauth_secret
-    end
 
-    # client.sample do |object|
-    #   # object.user.location if object.is_a?(Twitter::Tweet)
-    #   puts object.to_hash if object.is_a?(Twitter::Tweet)
-    #   end
-    # end
-    cnt = 0
-    arr = []
-    client.sample do |tweet|
-
-      # if tweet.is_a?(Twitter::Tweet) && cnt < 100 
-      #   cnt += 1
-      #   p 'hi'
-      #   arr.push(tweet.text)
-      # elsif arr.size === 100
-      #   return arr
-      # end
-      if tweet.is_a?(Twitter::Tweet) && cnt < 100 && !tweet.geo.nil?
-        cnt += 1
-        p 'hi'
-        arr.push(tweet.geo["coordinates"])
-      elsif arr.size === 100
-        return arr
-      end
-
-    end
-  end
+  # def get_user(uid)
+  #   client = Twitter::Streaming::Client.new do |config|
+  #     config.consumer_key        = Rails.application.config.twitter_key
+  #     config.consumer_secret     = Rails.application.config.twitter_secret
+  #     config.access_token        = oauth_token
+  #     config.access_token_secret = oauth_secret
+  #   end
+  #
+  #   cnt = 0
+  #   arr = []
+  #   client.sample do |tweet|
+  #     if tweet.is_a?(Twitter::Tweet) && cnt < 2 && !tweet.geo.nil?
+  #       cnt += 1
+  #       p 'hi'
+  #       # arr.push(tweet.geo["coordinates"])
+  #       arr.push(tweet.to_hash)
+  #     elsif arr.size === 2
+  #       return arr
+  #     end
+  #   end
+  # end
 
 end

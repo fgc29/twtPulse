@@ -30,6 +30,6 @@ App = {
   Routers: {}
 };
 
-// $(document).ready(
-//   console.log("loaded Brah!");
-// )
+$(document).ready(function() {
+  console.log("loaded Brah!");
+});

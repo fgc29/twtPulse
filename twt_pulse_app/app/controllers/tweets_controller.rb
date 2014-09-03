@@ -1,26 +1,24 @@
 class TweetsController < ApplicationController
   def index
   end
-  
-  def new
-  end
 
-  def create
-    current_user.tweet(twitter_params[:message])
-  end
+  # def new
+  # end
+  #
+  # def create
+  #   current_user.tweet(twitter_params[:message])
+  # end
 
   def search
     render :search
   end
+
   def results
-    @twitter_user = current_user.get_user(tweet_params[:uid])
+    @twitter_user = Tweet.get_user(current_user)
     render :results
   end
 
-  def twitter_params
-    params.require(:tweet).permit(:message)
-  end
-  def tweet_params
-    params.require(:tweet).permit(:uid)
-  end
+  # def twitter_params
+  #   params.require(:tweet).permit(:message)
+  # end
 end
