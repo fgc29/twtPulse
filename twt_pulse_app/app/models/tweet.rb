@@ -10,12 +10,12 @@ class Tweet
     cnt = 0
     arr = []
     client.sample do |tweet|
-      if tweet.is_a?(Twitter::Tweet) && cnt < 2 && !tweet.geo.nil?
+      if tweet.is_a?(Twitter::Tweet) && cnt < 50 && !tweet.geo.nil?
         cnt += 1
-        p 'hi'
-        # arr.push(tweet.geo["coordinates"])
-        arr.push(tweet.to_hash)
-      elsif arr.size === 2
+        p 'fetching tweet data'
+        arr.push(tweet.geo["coordinates"].reverse)
+        # arr.push(tweet.to_hash)
+      elsif arr.size === 50
         return arr
       end
     end

@@ -30,6 +30,7 @@ App = {
   Routers: {}
 };
 
-$(document).ready(function() {
+$(function() {
   console.log("loaded Brah!");
+  App.Models.tweet = new App.Models.Tweet();
 });

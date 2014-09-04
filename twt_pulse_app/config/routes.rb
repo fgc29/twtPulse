@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'tweets/show'
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
@@ -12,5 +11,5 @@ Rails.application.routes.draw do
   get '/tweets/search', to: 'tweets#search'
   get '/tweets/search_results', to: 'tweets#results'
 
-  root to: 'tweets#index'
+  root to: 'tweets#home'
 end
