@@ -33,7 +33,7 @@ gem 'pry-rails'
 gem 'twitter'
 gem 'omniauth-twitter'
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :productio
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
