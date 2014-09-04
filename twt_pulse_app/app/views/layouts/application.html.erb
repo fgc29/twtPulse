@@ -30,13 +30,14 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v0.min.js"></script>
 <script>
-var width = 960,
+var width = 600,
     height = 500;
 
 var projection = d3.geo.mercator()
-    .center([0, 5 ])
-    .scale(200)
-    .rotate([-180,0]);
+    .center([0, 0 ])
+    .scale(100)
+    // .rotate([-180,0])
+    .translate([width / 2, height / 2]);;
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -52,10 +53,10 @@ d3.json("/assets/topo.json", function(error, topology) {
 
 // load and display the cities
 d3.csv("/assets/city.csv", function(error, data) {
-    var colorsArr = ["red", "green", "blue", "purple", "coral", "yellow"];
-    var randomNum = function(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+//     var colorsArr = ["red", "green", "blue", "purple", "coral", "yellow"];
+//     var randomNum = function(min, max) {
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
     g.selectAll("circle")
        .data(data)
        .enter()
@@ -71,7 +72,7 @@ d3.csv("/assets/city.csv", function(error, data) {
                return projection([d.lon, d.lat])[1];
        })
        .attr("r", 5)
-       .style("fill", colorsArr[randomNum(0, 5)]);
+     .style("fill", /*colorsArr[randomNum(0, 5)]*/ "red");
 });
 
 
@@ -95,7 +96,7 @@ var zoom = d3.behavior.zoom()
 
   });
 
-svg.call(zoom)
+// svg.call(zoom)
 
 </script>
 <% end %>

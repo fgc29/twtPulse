@@ -20,7 +20,7 @@ class Tweet
         # arr.push(tweet.place["full_name"])
         # arr.push(tweet.place["country"])
         # arr.push(tweet.geo["coordinates"].reverse)
-        arr.push(tweet.geo["coordinates"].reverse)
+        arr.push(tweet.geo["coordinates"])
       elsif arr.size === 10
         CSV.open('app/assets/javascripts/city.csv', 'w', :write_headers=> true,
     :headers => ["lat", "lon"]) do |csv_object|
