@@ -15,7 +15,7 @@
 //= require underscore
 //= require backbone
 //= require handlebars
-//= require_self
+// require_self
 //= require_tree ./backbone/routers
 //= require_tree ./backbone/models
 //= require_tree ./backbone/collections
@@ -23,14 +23,18 @@
 //= require_tree ./templates
 //= require_tree .
 
-App = {
-  Models: {},
-  Views: {},
-  Collections: {},
-  Routers: {}
-};
+// App = {
+//   Models: {},
+//   Views: {},
+//   Collections: {},
+//   Routers: {}
+// };
+//
+// $(function() {
+//   console.log("loaded Brah!");
+//   App.Models.tweet = new App.Models.Tweet();
+// });
 
 $(function() {
-  console.log("loaded Brah!");
-  App.Models.tweet = new App.Models.Tweet();
-});
+  console.log("Loaded Bro!");
+})

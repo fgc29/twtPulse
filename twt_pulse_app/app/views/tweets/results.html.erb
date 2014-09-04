@@ -1,1 +1,27 @@
-<%= @twitter_user%>
+<% @twitter_user.each do |tweet|%>
+  <p><%= tweet["text"] %></p>
+  <p><%= tweet["place"]["full_name"] %></p>
+  <p><%= tweet["geo"]["coordinates"] %></p>
+  <hr>
+<% end %>
+
+<hr>
+<% @twitter_user.each.with_index do |coor, i| %>
+  <% if i != (@twitter_user.size - 1)  %>
+    <p><%= coor["geo"]["coordinates"].reverse %>,</p>
+  <% else %>
+    <p><%= coor["geo"]["coordinates"].reverse %></p>
+  <% end %>
+<% end %>
+<hr>
+<% @twitter_user.each.with_index do |coor, i| %>
+  <% if i != (@twitter_user.size - 1)  %>
+    <p><%= coor["geo"]["coordinates"][1] %>,
+       <%= coor["geo"]["coordinates"][0] %>
+    </p>
+  <% else %>
+    <p><%= coor["geo"]["coordinates"][1] %>,
+       <%= coor["geo"]["coordinates"][0] %>
+    </p>
+  <% end %>
+<% end %>

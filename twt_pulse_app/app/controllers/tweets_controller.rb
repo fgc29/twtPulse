@@ -18,9 +18,9 @@ class TweetsController < ApplicationController
 
   def results
     @twitter_user = Tweet.get_user(current_user)
-    render :results
+    render layout: 'application', text: ''
   end
-
+  # private
   # def twitter_params
   #   params.require(:tweet).permit(:message)
   # end
