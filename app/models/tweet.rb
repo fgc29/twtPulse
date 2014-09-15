@@ -2,7 +2,7 @@ require 'csv'
 require 'json'
 
 class Tweet
-  
+
   def self.get_user(user)
     client = Twitter::Streaming::Client.new do |config|
       config.consumer_key        = Rails.application.config.twitter_key
@@ -23,7 +23,7 @@ class Tweet
         # arr.push(tweet.geo["coordinates"].reverse)
         arr.push(tweet.geo["coordinates"])
       elsif arr.size === 10
-        CSV.open('app/assets/javascripts/city.csv', 'w', :write_headers=> true,
+        CSV.open('/assets/city.csv', 'w', :write_headers=> true,
     :headers => ["lat", "lon"]) do |csv_object|
           arr.each do |row_array|
             csv_object << [row_array[0], row_array[1]]
