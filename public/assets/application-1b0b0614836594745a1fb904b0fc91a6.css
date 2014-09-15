@@ -1,1 +1,81 @@
-.button{width:100px;height:20px;border:2px solid #55ACEE;border-radius:5px;padding:5px;text-align:center;background-color:#55ACEE;position:absolute;left:250px}.top a{text-decoration:none;color:red}.top{font-family:'Yanone Kaffeesatz', sans-serif;color:#55ACEE;font-size:1.5em}.button a{text-decoration:none;color:white;font-family:'Yanone Kaffeesatz', sans-serif;font-size:1.25em}.twitter-bird{background-image:url(/assets/twitter-bird-sprite.png);cursor:pointer;display:inline-block;height:150px;width:150px}.twitter-bird:hover{-webkit-animation:fly 0.2s steps(3) 0 infinite;-moz-animation:fly 0.2s steps(3) 0 infinite;animation:fly 0.2s steps(3) 0 infinite}@-webkit-keyframes fly{from{background-position:0 0}to{background-position:-450px 0}}@-moz-keyframes fly{from{background-position:0 0}to{background-position:-450px 0}}@keyframes fly{from{background-position:0 0}to{background-position:-450px 0}}#landing-container{width:80%;margin:10em auto}.landing{text-align:center}.site-title{text-align:center;font-size:2.5em;font-family:'Yanone Kaffeesatz', sans-serif;color:#8899a6;margin-top:-2.5em;margin-right:1.2em}path{stroke:white;stroke-width:0.25px;fill:#8899a6}
+.button {
+  width: 100px;
+  height: 20px;
+  border: 2px solid #55ACEE;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  background-color: #55ACEE;
+  position: absolute;
+  left: 250px;
+
+
+}
+
+.top a {
+  text-decoration: none;
+  color: red;
+}
+.top {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: #55ACEE;
+  font-size: 1.5em;
+}
+.button a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.25em;
+
+}
+.twitter-bird {
+  background-image: url(/assets/twitter-bird-sprite.png);
+  cursor: pointer;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+}
+
+.twitter-bird:hover {
+  -webkit-animation: fly 0.2s steps(3) 0 infinite;
+  -moz-animation: fly 0.2s steps(3) 0 infinite;
+  animation: fly 0.2s steps(3) 0 infinite;
+}
+
+@-webkit-keyframes fly {
+  from { background-position: 0 0; }
+    to { background-position: -450px 0; }
+}
+@-moz-keyframes fly {
+  from { background-position: 0 0; }
+    to { background-position: -450px 0; }
+}
+@keyframes fly {
+  from { background-position: 0 0; }
+    to { background-position: -450px 0; }
+}
+
+#landing-container {
+  /*margin-top: 5em;*/
+  width: 80%;
+  margin: 10em auto;
+}
+
+.landing {
+  text-align: center;
+}
+
+.site-title {
+  text-align: center;
+  font-size: 2.5em;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: #8899a6;
+  margin-top: -2.5em;
+  margin-right: 1.2em;
+}
+path {
+  stroke: white;
+  stroke-width: 0.25px;
+  /*fill: #ccd6dd;*/
+  fill: #8899a6;
+}
