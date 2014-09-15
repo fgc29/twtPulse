@@ -6,27 +6,28 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
-    <style>
-    path {
-      stroke: white;
-      stroke-width: 0.25px;
-      fill: grey;
-    }
-    </style>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div>
       <% if current_user %>
-        Signed in as <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <div class="top">Welcome to twtPulse</div> <div class="top"><strong><%= current_user.name %></strong>! <%= link_to "Sign out", signout_path %></div>
+
+
+      </div>
       <% else %>
-        <%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
+      <div id="landing-container">
+        <div class="landing">
+          <%= link_to "","/auth/twitter", id: "sign_in", class: "twitter-bird step" %>
+        </div>
+        <div class="site-title">
+          <h1>twtPulse</h1>
+        </div>
+        <div class="bubble"></div>
+      </div>
       <% end %>
-    </div>
     <div>
     <%= yield %>
     <% if current_user %>
-    <span><%= link_to "Start Stream", tweets_search_results_path %></span>
     <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v0.min.js"></script>
 <script>
@@ -71,8 +72,8 @@ d3.csv("/assets/city.csv", function(error, data) {
        .attr("cy", function(d) {
                return projection([d.lon, d.lat])[1];
        })
-       .attr("r", 5)
-     .style("fill", /*colorsArr[randomNum(0, 5)]*/ "red");
+       .attr("r", 3)
+     .style("fill", /*colorsArr[randomNum(0, 5)]*/  "red");
 });
 
 
@@ -99,7 +100,8 @@ var zoom = d3.behavior.zoom()
 // svg.call(zoom)
 
 </script>
+</div>
+<div class="button"> <%= link_to "get Pulse", tweets_search_results_path %>   </div>
 <% end %>
-    </div>
   </body>
 </html>

@@ -2,6 +2,7 @@ require 'csv'
 require 'json'
 
 class Tweet
+  
   def self.get_user(user)
     client = Twitter::Streaming::Client.new do |config|
       config.consumer_key        = Rails.application.config.twitter_key
@@ -29,7 +30,8 @@ class Tweet
           end
         end
         return false
-      end
+    end
+    # puts tweet["text"]
     end
   end
 

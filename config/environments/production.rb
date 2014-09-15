@@ -31,7 +31,10 @@ Rails.application.configure do
 
   # Generate digests for assets URLs.
   config.assets.digest = true
-
+  # config.twitter_key = ENV['twitter_key']
+  config.twitter_key = "Mgqqximnu3JPjudFXPYhHyoER"
+  # config.twitter_secret = ENV['twitter_secret']
+  config.twitter_secret = "IfSmNt9sGhjytPWbEVlijTMrHtfefCEuWBMtgh1Lz7m8C6ceij"
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
@@ -63,7 +66,10 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+config.assets.debug = true
 
+config.twitter_key = "Mgqqximnu3JPjudFXPYhHyoER"
+config.twitter_secret = "IfSmNt9sGhjytPWbEVlijTMrHtfefCEuWBMtgh1Lz7m8C6ceij"
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
