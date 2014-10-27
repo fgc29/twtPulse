@@ -19,8 +19,8 @@ class TweetsController < ApplicationController
   def results
     @twitter_user = Tweet.get_user(current_user)
     # binding.pry
-    # render json: @twitter_user
-    render layout: 'application', text: ''
+    render json: @twitter_user
+    # render layout: 'application', text: ''
   end
   # private
   # def twitter_params
