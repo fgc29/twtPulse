@@ -37,4 +37,11 @@
 
 $(function() {
   console.log("Loaded Bro!");
+//   $.ajax({
+//   url: "test.html",
+//
+// })
+// .done(function() {
+//   $( this ).addClass( "done" );
+// });
 })

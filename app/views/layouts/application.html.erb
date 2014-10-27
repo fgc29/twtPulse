@@ -58,6 +58,7 @@ d3.csv("/assets/city.csv", function(error, data) {
 //     var randomNum = function(min, max) {
 //   return Math.floor(Math.random() * (max - min)) + min;
 // }
+console.log(data)
     g.selectAll("circle")
        .data(data)
        .enter()
