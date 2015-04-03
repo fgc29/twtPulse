@@ -28,6 +28,7 @@ class Tweet
         arr2.push(tweet.geo.to_h.merge({:reach => reach}))
       elsif arr.size === 10
         puts arr2
+    ###### adding coordinates to CSV file #####
     #     CSV.open('public/assets/city.csv', 'w', :write_headers=> true,
     # :headers => ["lat", "lon"]) do |csv_object|
     #       arr.each do |row_array|

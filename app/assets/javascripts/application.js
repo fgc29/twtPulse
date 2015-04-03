@@ -15,6 +15,8 @@
 //= require underscore
 //= require backbone
 //= require handlebars
+//= http://d3js.org/d3.v3.min.js
+//= http://d3js.org/topojson.v0.min.js
 // require_self
 //= require_tree ./backbone/routers
 //= require_tree ./backbone/models
