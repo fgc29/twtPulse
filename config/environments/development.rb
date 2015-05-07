@@ -5,7 +5,8 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+  config.preload_frameworks = true
+  config.allow_concurrency = true
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -28,7 +29,6 @@ Rails.application.configure do
   config.assets.debug = true
   config.twitter_key = ENV['TWITTER_CONSUMER_KEY']
   config.twitter_secret = ENV['TWITTER_CONSUMER_SECRET']
-  # config.twitter_secret = "IfSmNt9sGhjytPWbEVlijTMrHtfefCEuWBMtgh1Lz7m8C6ceij"
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.

@@ -18,11 +18,6 @@
 //= http://d3js.org/d3.v3.min.js
 //= http://d3js.org/topojson.v0.min.js
 // require_self
-//= require_tree ./backbone/routers
-//= require_tree ./backbone/models
-//= require_tree ./backbone/collections
-//= require_tree ./backbone/views
-//= require_tree ./templates
 //= require_tree .
 
 // App = {
@@ -36,14 +31,3 @@
 //   console.log("loaded Brah!");
 //   App.Models.tweet = new App.Models.Tweet();
 // });
-
-$(function() {
-  console.log("Loaded Bro!");
-//   $.ajax({
-//   url: "test.html",
-//
-// })
-// .done(function() {
-//   $( this ).addClass( "done" );
-// });
-})

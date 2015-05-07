@@ -31,10 +31,8 @@ Rails.application.configure do
 
   # Generate digests for assets URLs.
   config.assets.digest = true
-  # config.twitter_key = ENV['twitter_key']
-  config.twitter_key = "Mgqqximnu3JPjudFXPYhHyoER"
-  # config.twitter_secret = ENV['twitter_secret']
-  config.twitter_secret = "IfSmNt9sGhjytPWbEVlijTMrHtfefCEuWBMtgh1Lz7m8C6ceij"
+   config.twitter_key = ENV['twitter_key']
+   config.twitter_secret = ENV['twitter_secret']
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.

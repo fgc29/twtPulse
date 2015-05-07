@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :tweets, only: [:index]
   get '/tweets/search', to: 'tweets#search'
   get '/tweets/search_results', to: 'tweets#results'
-
+  get '/tweets/start', to: 'tweets#start'
   root to: 'tweets#home'
 end
