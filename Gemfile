@@ -34,7 +34,8 @@ gem 'twitter'
 gem 'omniauth-twitter'
 
 ruby "2.1.2"
-
+gem 'redis', '~> 3.2.1'
+gem 'puma'
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
