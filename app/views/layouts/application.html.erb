@@ -26,15 +26,56 @@
       </div>
       <% end %>
     <div>
-    <%= yield %>
-    <% if current_user %>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://d3js.org/topojson.v0.min.js"></script>
+      <%= yield %>
+      <% if current_user %>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://d3js.org/topojson.v0.min.js"></script>
+        <script>
+          var width = 1200,
+              height = 1000;
+
+          var projection = d3.geo.mercator()
+              .center([0, 0 ])
+              .scale(200)
+              // .rotate([-180,0])
+              .translate([width / 2, height / 2]);
+
+          var svg = d3.select("body").append("svg")
+              .attr("width", width)
+              .attr("height", height);
+
+          var path = d3.geo.path()
+              .projection(projection);
+
+          var g = svg.append("g")
+
+          d3.json("/assets/topo.json",
+            function(error, topology) {
+
+              g.selectAll("path")
+               .data(topojson.object(topology, topology.objects.countries).geometries)
+               .enter()
+               .append("path")
+               .attr("d", path)
+          });
+
+            // zoom and pan
+            // var zoom = d3.behavior.zoom()
+            //     .on("zoom",function() {
+            //         g.attr("transform","translate("+
+            //             d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+            //         g.selectAll("circle")
+            //             .attr("d", path.projection(projection));
+            //         g.selectAll("path")
+            //             .attr("d", path.projection(projection));
+            //
+            //     });
+
+            // svg.call(zoom)
+
+        </script>
+      <% end %>
     </div>
     <button class="button"></button>
-<% end %>
-<div class="messages">
-
-</div>
   </body>
 </html>
